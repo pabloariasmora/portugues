@@ -13,7 +13,16 @@ general_question = 'Que numero é esse?'
 for row in questions:
     print(Fore.BLUE + general_question + Style.RESET_ALL)
     print(row[0])
-    answer = input("reponda: ")
+
+    invalid_anwer = True
+    while invalid_anwer:
+        try:
+            answer = input("reponda: ")
+            invalid_anwer = False
+        except UnicodeDecodeError:
+            print("erro de leitura")
+            invalid_anwer = True
+
     validate_answer(answer, row[1])
     print('-------------------')
 
