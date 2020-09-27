@@ -13,3 +13,9 @@
 
 ## Verbos
 ```python verbos.py```
+
+## Cardinais
+```python cardinais.py```
+
+## Preposiçâo
+```python preposicao.py```
