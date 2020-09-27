@@ -1,5 +1,5 @@
 import csv
-
+from colorama import Fore, Back, Style
 
 def open_csv(filename='artigos.csv'):
     contents = []
@@ -12,6 +12,8 @@ def open_csv(filename='artigos.csv'):
 
 
 def validate_answer(answer, valid_answers):
+    if not answer:
+        answer = "-"
     valid_answers_list = valid_answers.split('|')
     valid = False
     for valid_answer in valid_answers_list:
@@ -19,6 +21,9 @@ def validate_answer(answer, valid_answers):
             valid = True
             break
     if valid:
-        print('Certo')
+        print(Fore.GREEN + 'Certo'+ Style.RESET_ALL)
     else:
-        print('Incorreta')
+        print(Fore.RED + 'Incorreta:'+ Style.RESET_ALL)
+        print(" ,".join(valid_answers.split("|")))
+
+    return valid
