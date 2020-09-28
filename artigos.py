@@ -24,3 +24,5 @@ for row in questions:
     print('T[{}]:'.format(total)+Fore.GREEN + 'S[{}]:'.format(good)+Fore.RED + 'F[{}]'.format(bad) + Style.RESET_ALL)
     print('-------------------')
 
+
+

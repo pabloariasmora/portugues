@@ -12,6 +12,10 @@ persons = questions[0]
 questions = questions[1:]
 # Random
 random.shuffle(questions)
+
+total = len(questions)
+good = 0
+bad = 0
 for row in questions:
     person = random.randint(1, len(persons)-1)
     print(Fore.BLUE + general_question + Style.RESET_ALL)
@@ -23,7 +27,12 @@ for row in questions:
     else:
         print(persons[person] + ' (' + row[0] + ')')
     answer = input("Reponda: ")
-    validate_answer(answer, row[person])
 
+    response = validate_answer(answer, row[person])
+    if response:
+        good = 1 + good
+    else:
+        bad = bad + 1
+    print('T[{}]:'.format(total)+Fore.GREEN + 'S[{}]:'.format(good)+Fore.RED + 'F[{}]'.format(bad) + Style.RESET_ALL)
     print('-------------------')
 
