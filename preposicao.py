@@ -9,6 +9,7 @@ random.shuffle(questions)
 
 general_question = 'Complete com a preposiçâo, artigo e/ou contrações:'
 
+total = len(questions)
 for row in questions:
     print(Fore.BLUE + general_question + Style.RESET_ALL)
     print(row[0])
